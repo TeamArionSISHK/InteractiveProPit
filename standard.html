@@ -6,25 +6,28 @@
   <title>The Purple Standard | Team Arion</title>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top left, #5c3ed8, #5431db 70%);
+      background: linear-gradient(160deg, #2c2a78, #4b3cae 50%, #1e1c4f);
+      background-attachment: fixed;
+      background-size: cover;
+      background-repeat: no-repeat;
       color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       overflow-y: auto;
-      height: 100vh;
+      min-height: 100vh;
       -webkit-overflow-scrolling: touch;
     }
 
     .content {
-      max-width: 1000px;
+      max-width: 950px;
       width: 90%;
-      padding: 40px 20px 80px;
+      padding: 40px 20px 60px;
       animation: fadeIn 1s ease;
     }
 
@@ -36,11 +39,11 @@
     .hero-box {
       width: 100%;
       max-width: 850px;
-      border-radius: 22px;
+      border-radius: 20px;
       overflow: hidden;
       margin: 25px auto 40px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-      background: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.1);
       backdrop-filter: blur(6px);
       border: 2px solid rgba(255,255,255,0.25);
     }
@@ -53,39 +56,39 @@
 
     h1 {
       font-family: 'Barlow Semi Condensed', sans-serif;
-      font-size: 2.6em;
+      font-size: 2.5em;
       color: #ffffff;
-      letter-spacing: 0.05em;
-      margin-top: 10px;
-      text-shadow: 0 3px 12px rgba(0,0,0,0.3);
+      letter-spacing: 0.04em;
+      margin: 10px 0 20px;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.25);
     }
 
     h2 {
       font-family: 'Barlow Semi Condensed', sans-serif;
-      font-size: 1.7em;
+      font-size: 1.6em;
       margin-top: 40px;
       color: #ffffff;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
     p {
-      font-size: 1.15em;
-      line-height: 1.75em;
+      font-size: 1.1em;
+      line-height: 1.7em;
       color: rgba(255,255,255,0.95);
-      margin: 16px 0;
+      margin: 14px 0;
     }
 
     ul {
       list-style: none;
       padding: 0;
-      margin: 18px auto;
+      margin: 20px auto;
       max-width: 800px;
     }
 
     ul li {
       background: rgba(255,255,255,0.12);
       margin: 8px 0;
-      padding: 10px 14px;
+      padding: 10px 16px;
       border-radius: 10px;
       text-align: left;
       color: #fff;
@@ -94,9 +97,9 @@
 
     blockquote {
       font-style: italic;
-      font-size: 1.4em;
+      font-size: 1.3em;
       color: #ffffff;
-      margin: 28px auto;
+      margin: 30px auto;
       max-width: 750px;
       background: rgba(255,255,255,0.12);
       padding: 18px 22px;
@@ -108,7 +111,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 30px;
+      margin-top: 25px;
       background: rgba(255,255,255,0.1);
       border-radius: 12px;
       overflow: hidden;
@@ -140,7 +143,7 @@
       max-width: 850px;
       border-radius: 20px;
       overflow: hidden;
-      margin: 50px auto 20px;
+      margin: 50px auto 10px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       border: 2px solid rgba(255,255,255,0.25);
       background: rgba(255,255,255,0.1);
@@ -152,10 +155,17 @@
       display: block;
     }
 
+    .caption {
+      margin-top: 8px;
+      font-size: 0.95em;
+      color: rgba(255,255,255,0.85);
+      font-style: italic;
+    }
+
     footer {
       text-align: center;
       font-size: 0.95em;
-      margin-top: 40px;
+      margin-top: 30px;
       opacity: 0.85;
     }
   </style>
@@ -163,22 +173,22 @@
 <body>
   <div class="content">
     <div class="hero-box">
-      <img src="purple-standard-banner.jpg" alt="The Purple Standard Banner">
+      <img src="banner.png" alt="The Purple Standard Banner">
     </div>
 
     <h1>The Purple Standard — Core Meaning</h1>
     <p><strong>The Purple Standard</strong> represents <strong>Team Arion’s</strong> commitment to engineering perfection, design excellence, and professional discipline. It stands as our promise — that every car, every part, and every presentation embodies our pursuit of innovation, quality, and integrity.</p>
 
-    <p><strong>Purple</strong> — our defining color — symbolizes dual excellence:</p>
+    <p><strong>Purple</strong>, our defining color — symbolizes dual excellence:</p>
     <ul>
       <li><strong>Prestige and creativity</strong> — reflecting our drive to achieve mastery through originality and innovation.</li>
       <li><strong>Unity and purpose</strong> — merging passion and precision, balancing artistic vision with engineering discipline.</li>
     </ul>
 
-    <blockquote>“We don’t just build cars — we set the standard.”</blockquote>
+    <blockquote>“We are not just another STEM Racing team — we set the standard.”</blockquote>
 
-    <h2>🔩 The Purple Campaign System</h2>
-    <p><strong>Team Arion</strong> has built an entire campaign system around the idea of <strong>“The Purple _____”</strong> — a flexible identity framework that highlights our values and achievements across all areas of the team. Each phrase under this system represents a distinct pillar of who we are and what we stand for.</p>
+    <h2>The Purple Campaign System</h2>
+    <p><strong>Team Arion</strong> has built an entire campaign system around the idea of <strong>“The Purple _____”</strong> — a flexible identity framework that highlights our values and achievements across all areas of the team. Each phrase represents a pillar of who we are and what we stand for.</p>
 
     <table>
       <thead>
@@ -223,10 +233,11 @@
     </table>
 
     <div class="photo-box">
-      <img src="teampic.jpg" alt="Team Arion Photo">
+      <img src="teampic.jpeg" alt="Team Arion Photo">
     </div>
+    <div class="caption">The minds behind The Purple Standard.</div>
 
-    <footer>Thanks for supporting The Purple Standard!</footer>
+
   </div>
 </body>
 </html>

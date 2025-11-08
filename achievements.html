@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Team Arion Achievements</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(160deg, #2c2a78, #4b3cae 50%, #1e1c4f);
+      background-attachment: fixed;
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      overflow-y: auto;
+      min-height: 100vh;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .content {
+      max-width: 950px;
+      width: 90%;
+      padding: 40px 20px 60px;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-family: 'Barlow Semi Condensed', sans-serif;
+      font-size: 2.6em;
+      color: #ffffff;
+      letter-spacing: 0.05em;
+      margin: 30px 0 40px;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .award {
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 18px 26px 22px;
+      margin: 25px 0;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      border: 2px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .award:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-4px);
+    }
+
+    .award i {
+      font-size: 2em;
+      color: #ffffff;
+      margin-top: 4px;
+      flex-shrink: 0;
+      opacity: 0.95;
+    }
+
+    .award-content {
+      flex: 1;
+    }
+
+    .award-content h2 {
+      font-family: 'Barlow Semi Condensed', sans-serif;
+      color: #fff;
+      font-size: 1.6em;
+      font-weight: 600;
+      margin: 0 0 6px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .award-content p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.05em;
+      margin: 0;
+      line-height: 1.6em;
+    }
+
+    .photo-box {
+      width: 100%;
+      max-width: 850px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 50px auto 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      border: 2px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .caption {
+      margin-top: 10px;
+      font-size: 1em;
+      color: rgba(255,255,255,0.85);
+      font-style: italic;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.95em;
+      margin-top: 35px;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1><i class="fa-solid fa-trophy"></i> Team Arion Achievements</h1>
+
+    <div class="award">
+      <i class="fa-solid fa-medal"></i>
+      <div class="award-content">
+        <h2>Development Class Champion</h2>
+        <p>Team Arion claimed the title of <strong>Development Class Champion</strong> at the 2025 Hong Kong & Macau STEM Racing Regional Finals, showcasing superior design, teamwork, and performance.</p>
+      </div>
+    </div>
+
+    <div class="award">
+      <i class="fa-solid fa-gear"></i>
+      <div class="award-content">
+        <h2>Dev Class - Best Engineered Car Award</h2>
+        <p>Our car, <strong>Fluence</strong>, achieved the <strong>Best Engineered Car</strong> award with an outstanding race time of <strong>1.308 seconds</strong>, combining aerodynamic optimization with precise engineering.</p>
+      </div>
+    </div>
+
+    <div class="award">
+      <i class="fa-solid fa-people-group"></i>
+      <div class="award-content">
+        <h2>Development Class Second Runner-up</h2>
+        <p>Following our collaboration and merger with <strong>Team Bauhinia Shift</strong> (Development Class Third Place). Team Arion proudly took the position of <strong>Development Class Second Runner-up</strong>, carrying forward the combined spirit of innovation, precision, and unity.</p>
+      </div>
+    </div>
+
+    <div class="photo-box">
+      <img src="awards.jpg" alt="Team Arion Awards Photo">
+    </div>
+    <div class="caption">Team Arion and Team Bauhinia Shift, united in excellence and innovation.</div>
+
+  </div>
+</body>
+</html>
