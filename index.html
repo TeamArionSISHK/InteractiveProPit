@@ -142,7 +142,7 @@
       flex: 1;
       border: none;
       background: rgba(0,0,0,0.1);
-      transition: opacity 0.4s ease;
+      transition: opacity 0.42s ease;
     }
 
     footer {
@@ -153,7 +153,7 @@
       font-weight: 500;
       width: 100%;
       overflow: hidden;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.42s ease;
     }
   </style>
 </head>
@@ -202,7 +202,7 @@
   <script>
     let timeout;
 
-    function resetTimer(){ clearTimeout(timeout); timeout=setTimeout(goBack,15000); }
+    function resetTimer(){ clearTimeout(timeout); timeout=setTimeout(goBack,20000); }
     document.addEventListener('pointerdown', resetTimer, {passive:true});
     document.addEventListener('pointermove', resetTimer, {passive:true});
 
