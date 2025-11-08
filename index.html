@@ -202,7 +202,7 @@
   <script>
     let timeout;
 
-    function resetTimer(){ clearTimeout(timeout); timeout=setTimeout(goBack,20000); }
+    function resetTimer(){ clearTimeout(timeout); timeout=setTimeout(goBack,60000); }
     document.addEventListener('pointerdown', resetTimer, {passive:true});
     document.addEventListener('pointermove', resetTimer, {passive:true});
 
