@@ -10,7 +10,8 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     html, body {
-      width: 100%; height: 100%; overflow: hidden;
+      width: 100%; height: 100%;
+      overflow: hidden;
       background: linear-gradient(135deg, #5431db, #6a4fd2);
       color: #fff; font-family: 'Inter', sans-serif; font-weight: 500;
       user-select: none; touch-action: manipulation;
@@ -19,25 +20,11 @@
 
     header {
       font-family: 'Barlow Semi Condensed', sans-serif;
-      font-size: 2.4em; font-weight: 500; line-height: 1.2;
-      padding: 20px 24px; text-align: center; text-shadow: 0 2px 10px rgba(0,0,0,.2);
-      text-transform: uppercase; letter-spacing: 0.08em;
+      font-size: 2.3em; font-weight: 500; line-height: 1.1;
+      padding: 20px 24px; text-align: center; text-shadow: 0 2px 10px rgba(0,0,0,.25);
+      text-transform: uppercase; letter-spacing: 0.07em;
       transition: opacity 0.4s ease;
-    }
-
-    .fade {
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .menu-container, #content {
-      transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-
-    .menu-container.hidden, #content.hidden {
-      opacity: 0;
-      transform: scale(0.98);
-      pointer-events: none;
+      width: 100%;
     }
 
     .menu-container {
@@ -46,47 +33,56 @@
       align-items: center;
       justify-content: center;
       width: 100%;
+      height: calc(100% - 120px);
+      padding: 0 3%;
+      overflow: hidden;
+      transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
     .menu {
       display: grid;
-      width: 85%;
-      max-width: 1100px;
-      gap: 24px;
+      width: 100%;
+      height: 90%;
+      max-width: 1300px;
+      gap: 16px; /* More spacing between buttons */
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: repeat(2, 1fr);
       justify-items: center;
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media (max-width: 1000px) {
-      .menu { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    @media (max-width: 800px) {
-      .menu { grid-template-columns: repeat(3, 1fr); }
+      align-items: center;
     }
 
     .menu button {
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.25);
-      border-radius: 16px; padding: 22px; color: #fff;
-      font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 500;
-      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.15);
+      border: 2.5px solid rgba(255,255,255,0.25);
+      border-radius: 18px;
+      color: #fff;
+      font-family: 'Barlow Semi Condensed', sans-serif;
+      font-weight: 500;
+      transition: transform .3s ease, background .3s ease, border-color .3s ease, opacity .3s ease;
       cursor: pointer;
-      aspect-ratio: 1 / 1;
-      width: 100%;
-      font-size: clamp(1em, 1.2vw, 1.3em);
+      font-size: clamp(1.2em, 1.7vw, 1.5em);
       text-align: center;
+      aspect-ratio: 1.5 / 1;
+      width: 100%;
+      padding: 14px;
+      opacity: 0.95;
     }
 
     .menu button:hover {
-      background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.4);
-      transform: scale(1.03);
+      background: rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.5);
+      transform: scale(1.04);
+      opacity: 1;
     }
 
-    .menu button:active { transform: scale(0.98); }
-
     .menu button i {
-      font-size: clamp(1.8em, 3vw, 2.5em); color: #fff; margin-bottom: 10px;
+      font-size: clamp(2.3em, 3.5vw, 3.2em);
+      color: #fff;
+      margin-bottom: 10px;
     }
 
     #content {
@@ -94,6 +90,15 @@
       height: 100%;
       width: 100%;
       flex-direction: column;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .content-active {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
     }
 
     .top-bar {
@@ -101,44 +106,53 @@
       justify-content: flex-start;
       align-items: center;
       width: 100%;
-      padding: 10px 20px;
-      background: rgba(255,255,255,0.1);
-      border-bottom: 2px solid rgba(255,255,255,0.2);
+      padding: 14px 26px;
+      background: rgba(255,255,255,0.12);
+      border-bottom: 2px solid rgba(255,255,255,0.25);
       font-family: 'Barlow Semi Condensed', sans-serif;
       gap: 20px;
       z-index: 2;
+      transition: opacity 0.4s ease;
+    }
+
+    .page-title {
+      font-size: 1.6em;
+      font-weight: 500;
     }
 
     .top-bar button {
-      background: none; color: #fff; border: 2px solid rgba(255,255,255,0.5);
-      border-radius: 12px; padding: 6px 14px; cursor: pointer; font-weight: 500;
-      transition: background .2s ease; display: flex; align-items: center; gap: 6px;
+      background: none;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 12px;
+      padding: 10px 22px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background .3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2em;
     }
-
-    .top-bar button i { font-size: 1.1em; }
 
     .top-bar button:hover { background: rgba(255,255,255,0.25); }
-
-    .page-title {
-      font-size: 1.4em;
-      font-weight: 500;
-      text-align: left;
-    }
 
     iframe {
       width: 100%;
       flex: 1;
       border: none;
       background: rgba(0,0,0,0.1);
-      z-index: 1;
+      transition: opacity 0.4s ease;
     }
 
     footer {
       text-align: center;
       padding: 10px 16px 14px;
-      font-size: 1.05em;
+      font-size: 1.15em;
       color: rgba(255,255,255,0.92);
       font-weight: 500;
+      width: 100%;
+      overflow: hidden;
       transition: opacity 0.4s ease;
     }
   </style>
@@ -183,7 +197,7 @@
     <iframe id="iframe" src=""></iframe>
   </div>
 
-  <footer id="footer">Thank you for visiting <strong>Team Arion</strong>.</footer>
+  <footer id="footer">Thank you for visiting Team Arion!</footer>
 
   <script>
     let timeout;
@@ -198,9 +212,9 @@
       const footer = document.getElementById('footer');
       const content = document.getElementById('content');
 
-      menu.classList.add('hidden');
-      header.classList.add('fade');
-      footer.classList.add('fade');
+      menu.style.opacity = '0';
+      header.style.opacity = '0';
+      footer.style.opacity = '0';
 
       setTimeout(() => {
         menu.style.display = 'none';
@@ -209,7 +223,7 @@
         content.style.display = 'flex';
         document.getElementById('pageTitle').textContent = title;
         document.getElementById('iframe').src = url;
-        content.classList.remove('hidden');
+        requestAnimationFrame(() => content.classList.add('content-active'));
       }, 400);
 
       resetTimer();
@@ -221,16 +235,19 @@
       const footer = document.getElementById('footer');
       const content = document.getElementById('content');
 
-      content.classList.add('hidden');
+      content.classList.remove('content-active');
+      content.style.opacity = '0';
 
       setTimeout(() => {
         content.style.display = 'none';
         menu.style.display = 'flex';
         header.style.display = 'block';
         footer.style.display = 'block';
-        menu.classList.remove('hidden');
-        header.classList.remove('fade');
-        footer.classList.remove('fade');
+        requestAnimationFrame(() => {
+          menu.style.opacity = '1';
+          header.style.opacity = '1';
+          footer.style.opacity = '1';
+        });
         document.getElementById('iframe').src = '';
       }, 400);
 
