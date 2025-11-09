@@ -13,9 +13,7 @@
       background: linear-gradient(160deg, #2c2a78, #4b3cae 50%, #1e1c4f);
       background-size: cover;
       background-attachment: fixed;
-      background-repeat: no-repeat;
       color: #fff;
-      text-align: center;
       overflow-y: auto;
       min-height: 100vh;
     }
@@ -25,14 +23,15 @@
       width: 90%;
       margin: auto;
       padding: 40px 20px 60px;
+      text-align: center;
     }
 
     h1 {
       font-family: 'Barlow Semi Condensed', sans-serif;
       font-size: 2.4em;
-      color: #ffffff;
+      color: #fff;
       letter-spacing: 0.05em;
-      margin: 30px 0 40px;
+      margin: 30px 0 35px;
       text-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
@@ -43,7 +42,7 @@
       text-align: justify;
       margin-bottom: 35px;
       background: rgba(255,255,255,0.08);
-      padding: 20px 25px;
+      padding: 22px 28px;
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       border: 1.5px solid rgba(255,255,255,0.2);
@@ -62,13 +61,13 @@
     .sdg-header {
       display: flex;
       align-items: center;
-      gap: 20px;
-      margin-bottom: 15px;
+      gap: 18px;
+      margin-bottom: 10px;
     }
 
     .sdg-header img {
-      width: 90px;
-      height: 90px;
+      width: 85px;
+      height: 85px;
       border-radius: 12px;
       border: 2px solid rgba(255,255,255,0.3);
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -76,17 +75,32 @@
 
     .sdg-header h2 {
       font-family: 'Barlow Semi Condensed', sans-serif;
-      color: #ffffff;
       font-size: 1.6em;
       margin: 0;
+      color: #fff;
     }
 
-    .sdg-section p {
+    .sdg-section p, .sdg-section ul {
       font-size: 1.1em;
       line-height: 1.7em;
       color: rgba(255,255,255,0.9);
       text-align: justify;
-      margin-top: 8px;
+      margin: 10px 0 0;
+    }
+
+    ul {
+      margin-left: 25px;
+      list-style-type: disc;
+    }
+
+    .beneficiaries {
+      margin-top: 15px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 12px 18px;
+      border-left: 4px solid rgba(255,255,255,0.4);
+      font-style: italic;
+      color: rgba(255,255,255,0.9);
     }
 
     .photos {
@@ -115,10 +129,10 @@
 </head>
 <body>
   <div class="content">
-    <h1>Team Arion’s Commitment to Sustainability</h1>
+    <h1>🌱 Team Arion’s Commitment to Sustainability</h1>
 
     <div class="intro">
-      At Team Arion, we believe engineering excellence should go hand in hand with social and environmental responsibility. As a team driven by innovation, we see sustainability not just as a goal, but as a mindset — one that guides how we design, collaborate, and give back to our community. This philosophy extends to our physical workspace as well. For example, our pit display frame is constructed using partially recycled materials, reflecting our commitment to reducing waste and promoting sustainable practices. By aligning our work with the United Nations Sustainable Development Goals, we strive to create a lasting positive impact that extends beyond the racetrack.
+      As a team driven by innovation, we see sustainability not just as a goal, but as a mindset — one that guides how we design, collaborate, and give back to our community. This philosophy extends to our physical workspace as well. For example, our pit display frame is constructed using partially recycled materials, reflecting our commitment to reducing waste and promoting sustainable practices. By aligning our work with the United Nations Sustainable Development Goals, we strive to create a lasting positive impact that extends beyond the racetrack.
     </div>
 
     <div class="sdg-section">
@@ -126,12 +140,15 @@
         <img src="sdg4.png" alt="SDG 4 Quality Education">
         <h2>Quality Education (SDG 4)</h2>
       </div>
- <ul style='margin-top:12px; margin-left:20px; color:rgba(255,255,255,0.9); line-height:1.6em;'>
+      <ul>
         <li>We’ve reached over 120 students, inspiring interest in engineering and STEM careers.</li>
         <li>Organised 7 STEM workshops for primary schools and community centres.</li>
         <li>Focused on supporting underprivileged children and promoting equal access to STEM education.</li>
         <li>Educated participants on the mechanics of Formula One through interactive, hands-on activities.</li>
       </ul>
+      <div class="beneficiaries">
+        Beneficiaries: Chai Wan Kok Catholic Primary School, Salesian Yip Hon Millennium Primary School, Caritas Community Development Service Center (Aster Court Shopping Arcade)
+      </div>
     </div>
 
     <div class="sdg-section">
@@ -147,7 +164,7 @@
         <img src="sdg17.png" alt="SDG 17 Partnerships for the Goals">
         <h2>Partnerships for the Goals (SDG 17)</h2>
       </div>
-      <p>Our collaborations with sustainable and socially responsible companies, including partnerships with sustinable companies like Xometry, strengthen our network and advance sustainability, innovation, and ethical growth across industries.</p>
+      <p>Our collaborations with sustainable and socially responsible companies, including partnerships with sustainable companies like Xometry, strengthen our network and advance sustainability, innovation, and ethical growth across industries.</p>
     </div>
 
     <div class="photos">
@@ -155,6 +172,7 @@
       <img src="community2.png" alt="Team Arion Community Outreach 2">
     </div>
 
+    <footer>© Team Arion — The Purple Standard</footer>
   </div>
 </body>
 </html>
