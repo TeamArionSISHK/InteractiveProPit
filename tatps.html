@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Purple Drift — Team Arion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: #1e1f3a; /* Arion navy */
+      overflow: hidden;
+      font-family: "Barlow Semi Condensed", sans-serif;
+    }
+
+    .word {
+      position: absolute;
+      font-size: 2.8rem;
+      font-style: italic;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.65);
+      white-space: nowrap;
+      pointer-events: none;
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .spotlight {
+      background: linear-gradient(90deg, #5c3ed8, #2cd3ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transform: scale(1.25);
+      opacity: 1 !important;
+    }
+
+    .definition {
+      position: absolute;
+      bottom: 8%;
+      width: 100%;
+      text-align: center;
+      font-size: 1.3rem;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      color: rgba(255, 255, 255, 0.85);
+      font-style: italic;
+      pointer-events: none;
+    }
+
+    .definition.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="definition" id="definitionBox"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // ---------- CONFIG ----------
+      var phrases = [
+        { text: "The Purple Standard",  desc: "Our mindset of precision, discipline, and intent." },
+        { text: "The Purple Method",    desc: "Iteration shaped by clarity, analysis, and purpose." },
+        { text: "The Purple Cycle",     desc: "Design → Test → Learn → Refine." },
+        { text: "The Purple Identity",  desc: "The language and philosophy defining Arion." },
+        { text: "The Purple Line",      desc: "Alignment, flow, and structural discipline." },
+        { text: "The Purple Framework", desc: "Systems guiding how we build and operate." },
+        { text: "The Purple Detail",    desc: "Small choices that shape performance." },
+        { text: "The Purple Motion",    desc: "Progress driven by thoughtful iteration." }
+      ];
+
+      var MAX_WORDS = 8;
+      var numWords = Math.min(MAX_WORDS, phrases.length);
+
+      var words = []; // { el, x, y, vx, phrase, frozen }
+      var definitionBox = document.getElementById("definitionBox");
+
+      var W = window.innerWidth || document.documentElement.clientWidth;
+      var H = window.innerHeight || document.documentElement.clientHeight;
+
+      var safeLeft = W * 0.18;
+      var safeRight = W * 0.82;
+
+      // ---------- CREATE WORDS, SPACED VERTICALLY ----------
+      var yPositions = [];
+      for (var i = 0; i < numWords; i++) {
+        // Evenly spaced vertical bands with small jitter
+        var base = 80 + (H - 160) * (i + 0.5) / numWords;
+        var jitter = (Math.random() - 0.5) * 20; // ±10px
+        yPositions.push(base + jitter);
+      }
+
+      for (var j = 0; j < numWords; j++) {
+        var phrase = phrases[j % phrases.length];
+
+        var el = document.createElement("div");
+        el.className = "word";
+        el.textContent = phrase.text;
+
+        document.body.appendChild(el); // must be in DOM before measuring
+
+        var x = Math.random() * W;
+        var y = yPositions[j];
+
+        // speed: 0.2–0.45 px per frame
+        var speed = 0.2 + Math.random() * 0.25;
+        var dir = Math.random() < 0.5 ? -1 : 1;
+        var vx = speed * dir;
+
+        el.style.top = y + "px";
+        el.style.transform = "translate(" + x + "px, 0)";
+
+        words.push({
+          el: el,
+          x: x,
+          y: y,
+          vx: vx,
+          phrase: phrase,
+          frozen: false
+        });
+      }
+
+      // ---------- ANIMATION LOOP ----------
+      function animate() {
+        for (var i = 0; i < words.length; i++) {
+          var w = words[i];
+          if (w.frozen) continue;
+
+          w.x += w.vx;
+
+          var width = w.el.offsetWidth || 200;
+
+          if (w.x < -width - 60) {
+            w.x = W + 60;
+          } else if (w.x > W + 60) {
+            w.x = -width - 60;
+          }
+
+          w.el.style.transform = "translate(" + w.x + "px, 0)";
+        }
+
+        window.requestAnimationFrame(animate);
+      }
+
+      window.requestAnimationFrame(animate);
+
+      // ---------- SPOTLIGHT LOGIC ----------
+      var isSpotlighting = false;
+
+      function triggerSpotlight() {
+        if (isSpotlighting) return;
+        if (words.length === 0) return;
+
+        var chosen = null;
+        var attempts = 0;
+
+        while (!chosen && attempts < 20) {
+          var candidate = words[Math.floor(Math.random() * words.length)];
+          var rect = candidate.el.getBoundingClientRect();
+          if (rect.width === 0) {
+            attempts++;
+            continue;
+          }
+          if (rect.left > safeLeft && rect.right < safeRight) {
+            chosen = candidate;
+            break;
+          }
+          attempts++;
+        }
+
+        if (!chosen) return;
+
+        isSpotlighting = true;
+
+        // Freeze chosen word
+        chosen.frozen = true;
+        chosen.el.classList.add("spotlight");
+
+        // Dim others
+        for (var i = 0; i < words.length; i++) {
+          if (words[i] !== chosen) {
+            words[i].el.style.opacity = "0.12";
+          }
+        }
+
+        // Show definition
+        definitionBox.textContent = chosen.phrase.desc;
+        definitionBox.classList.add("visible");
+
+        // Reset after delay
+        setTimeout(function () {
+          chosen.el.classList.remove("spotlight");
+          chosen.frozen = false;
+          definitionBox.classList.remove("visible");
+
+          for (var k = 0; k < words.length; k++) {
+            words[k].el.style.opacity = "0.65";
+          }
+
+          isSpotlighting = false;
+        }, 2600);
+      }
+
+      function scheduleSpotlight() {
+        triggerSpotlight();
+        var delay = 4500 + Math.random() * 4500; // 4.5–9 seconds
+        setTimeout(scheduleSpotlight, delay);
+      }
+
+      setTimeout(scheduleSpotlight, 3500);
+    });
+  </script>
+
+</body>
+</html>
