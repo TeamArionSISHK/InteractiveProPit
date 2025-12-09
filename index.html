@@ -171,7 +171,7 @@
       </button>
       <button onclick="openPage('design.html','Design & Engineering Portfolio')">
         <i class="fa-solid fa-gears"></i>
-        <span>Design & Engineering Portfolio</span>
+        <span>Design & Engineering</span>
       </button>
       <button onclick="openPage('standard.html','The Purple Standard')">
         <i class="fa-solid fa-star"></i>
@@ -197,6 +197,17 @@
       <button onclick="goBack()"><i class="fa-solid fa-arrow-left"></i> Go Back</button>
       <div class="page-title" id="pageTitle">Page Title</div>
     </div>
+
+    <!-- 🔹 Inline persistent car viewer lives here -->
+    <div id="carContainer" style="display:none; flex: 1; min-height: 0;">
+      <iframe 
+        src="https://apps8320.autodesk360.com/g/shares/SH90d2dQT28d5b60281158ba7dd8a22ad0b9?mode=embed"
+        allowfullscreen
+        allow="fullscreen"
+    ></iframe>
+    </div>
+
+    <!-- 🔹 Dynamic iframe for all other pages (unchanged behavior) -->
     <iframe id="iframe" src=""></iframe>
   </div>
 
@@ -205,27 +216,49 @@
   <script>
     let timeout;
 
-    function resetTimer(){ clearTimeout(timeout); timeout=setTimeout(goBack,60000); }
+    function resetTimer(){ 
+      clearTimeout(timeout); 
+      timeout = setTimeout(goBack, 60000); 
+    }
     document.addEventListener('pointerdown', resetTimer, {passive:true});
     document.addEventListener('pointermove', resetTimer, {passive:true});
 
     function openPage(url,title){
-      const menu = document.getElementById('menuContainer');
-      const header = document.getElementById('mainHeader');
-      const footer = document.getElementById('footer');
+      const menu    = document.getElementById('menuContainer');
+      const header  = document.getElementById('mainHeader');
+      const footer  = document.getElementById('footer');
       const content = document.getElementById('content');
+      const iframe  = document.getElementById('iframe');
+      const carContainer = document.getElementById('carContainer');
 
-      menu.style.opacity = '0';
+      menu.style.opacity   = '0';
       header.style.opacity = '0';
       footer.style.opacity = '0';
 
       setTimeout(() => {
-        menu.style.display = 'none';
+        menu.style.display   = 'none';
         header.style.display = 'none';
         footer.style.display = 'none';
+
         content.style.display = 'flex';
         document.getElementById('pageTitle').textContent = title;
-        document.getElementById('iframe').src = url;
+
+        if (url === 'car.html') {
+          // Show inline car viewer, hide iframe
+          if (carContainer) carContainer.style.display = 'flex';
+          if (iframe) {
+            iframe.style.display = 'none';
+            iframe.src = '';
+          }
+        } else {
+          // Hide car viewer, show iframe with the requested page
+          if (carContainer) carContainer.style.display = 'none';
+          if (iframe) {
+            iframe.style.display = 'block';
+            iframe.src = url;
+          }
+        }
+
         requestAnimationFrame(() => content.classList.add('content-active'));
       }, 400);
 
@@ -233,25 +266,36 @@
     }
 
     function goBack(){
-      const menu = document.getElementById('menuContainer');
-      const header = document.getElementById('mainHeader');
-      const footer = document.getElementById('footer');
+      const menu    = document.getElementById('menuContainer');
+      const header  = document.getElementById('mainHeader');
+      const footer  = document.getElementById('footer');
       const content = document.getElementById('content');
+      const iframe  = document.getElementById('iframe');
+      const carContainer = document.getElementById('carContainer');
 
       content.classList.remove('content-active');
       content.style.opacity = '0';
 
       setTimeout(() => {
         content.style.display = 'none';
-        menu.style.display = 'flex';
-        header.style.display = 'block';
-        footer.style.display = 'block';
+        menu.style.display    = 'flex';
+        header.style.display  = 'block';
+        footer.style.display  = 'block';
+
+        // Reset for next time (car stays rendered, just hidden)
+        if (iframe) {
+          iframe.style.display = 'block';
+          iframe.src = '';
+        }
+        if (carContainer) {
+          carContainer.style.display = 'none';
+        }
+
         requestAnimationFrame(() => {
-          menu.style.opacity = '1';
+          menu.style.opacity   = '1';
           header.style.opacity = '1';
           footer.style.opacity = '1';
         });
-        document.getElementById('iframe').src = '';
       }, 400);
 
       resetTimer();

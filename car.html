@@ -1,1 +1,66 @@
-<h1>Not Available</h1><br><h2>Under development</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fullscreen Embed</title>
+
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* Fullscreen receiver */
+    #container:fullscreen {
+        width: 100vw;
+        height: 100vh;
+    }
+</style>
+</head>
+<body>
+
+<div id="container">
+    <!-- Replace with your Fusion/YouTube/model-viewer/etc -->
+    <iframe 
+        src="https://apps8320.autodesk360.com/g/shares/SH90d2dQT28d5b60281158ba7dd8a22ad0b9?mode=embed"
+        allowfullscreen
+        allow="fullscreen"
+    ></iframe>
+</div>
+
+<script>
+document.addEventListener("click", () => {
+    // Clicking anywhere will request fullscreen
+    const elem = document.getElementById("container");
+
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+    }
+});
+</script>
+
+</body>
+</html>
