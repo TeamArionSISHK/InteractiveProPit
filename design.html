@@ -4,25 +4,28 @@
   <meta charset="UTF-8">
   <title>Embedded InDesign Document</title>
   <style>
-    /* Make iframe take full viewport height & width */
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       width: 100%;
+      overflow-y: hidden; /* 🔒 Lock vertical scrolling */
     }
+
     iframe {
       border: none;
       width: 100%;
       height: 100%;
+      overflow-y: hidden;
     }
   </style>
 </head>
 <body>
-  <iframe src="https://indd.adobe.com/view/0e752908-da0a-4477-a1dd-6b43f0c327a4"
-          allowfullscreen>
+  <iframe 
+    src="https://indd.adobe.com/view/0e752908-da0a-4477-a1dd-6b43f0c327a4"
+    allowfullscreen>
     Your browser doesn’t support iframes — you can view the document directly 
-    <a href="https://indd.adobe.com/view/b40f2181-99b2-4ac7-bb67-b27396a9386a">here</a>.
+    <a href="https://indd.adobe.com/view/0e752908-da0a-4477-a1dd-6b43f0c327a4">here</a>.
   </iframe>
 </body>
 </html>
