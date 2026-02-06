@@ -11,7 +11,7 @@ This project is preserved for archival and historical reference and is no longer
 
 ## Purpose
 The system was developed as part of Team Arion’s competition infrastructure, supporting:
-- Interactive 3D model viewer using Fusion's web embed. 
+- Interactive 3D model viewer using Autodesk Fusion's web embed. 
 - Portfolios showcase
 - QR codes and etc.
 
