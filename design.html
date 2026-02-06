@@ -1,31 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page-design">
 <head>
   <meta charset="UTF-8">
   <title>Embedded InDesign Document</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      overflow-y: hidden; /* 🔒 Lock vertical scrolling */
-    }
-
-    iframe {
-      border: none;
-      width: 100%;
-      height: 100%;
-      overflow-y: hidden;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/scripts.js" defer></script>
 </head>
-<body>
-  <iframe 
-    src="https://indd.adobe.com/view/0e752908-da0a-4477-a1dd-6b43f0c327a4"
-    allowfullscreen>
-    Your browser doesn’t support iframes — you can view the document directly 
-    <a href="https://indd.adobe.com/view/0e752908-da0a-4477-a1dd-6b43f0c327a4">here</a>.
-  </iframe>
+<body class="page-design">
+  <!-- Design document embed -->
+  <main>
+    <iframe
+      src="https://indd.adobe.com/view/0e752908-da0a-4477-a1dd-6b43f0c327a4"
+      allowfullscreen
+      title="Team Arion Design Document"
+    >
+      Your browser doesn’t support iframes — you can view the document directly
+      <a href="https://indd.adobe.com/view/0e752908-da0a-4477-a1dd-6b43f0c327a4">here</a>.
+    </iframe>
+  </main>
 </body>
 </html>

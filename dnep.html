@@ -1,189 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page-dnep">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>Connect | Team Arion</title>
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
-  <style>
-    /* === RESET & EMBED SAFETY === */
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      font-family: 'Inter', sans-serif;
-      background: transparent; /* IMPORTANT for embeds */
-      overflow: hidden;
-    }
-
-    /* === FULL-PAGE CONTAINER === */
-    .embed-root {
-      width: 100%;
-      height: 100%;
-      box-sizing: border-box;
-      padding: 32px 36px;
-      display: flex;
-      flex-direction: column;
-      background: linear-gradient(160deg, #2c2a78, #4b3cae 50%, #1e1c4f);
-      color: #fff;
-    }
-
-    /* === HEADER === */
-    .header {
-      flex: 0 0 auto;
-      text-align: center;
-      margin-bottom: 24px;
-    }
-
-    .header h1 {
-      font-family: 'Barlow Semi Condensed', sans-serif;
-      font-size: 2.2em;
-      letter-spacing: 0.05em;
-      margin: 0 0 8px;
-      text-shadow: 0 3px 10px rgba(0,0,0,0.3);
-    }
-
-    .header p {
-      font-size: 1.05em;
-      opacity: 0.9;
-      max-width: 900px;
-      margin: 0 auto;
-      line-height: 1.6em;
-    }
-
-    /* === CONTENT AREA (AUTO-FIT) === */
-    .content {
-      flex: 1 1 auto;
-      display: flex;
-      align-items: stretch;
-    }
-
-    .social-grid {
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 22px;
-    }
-
-    /* === SOCIAL CARDS === */
-    .social-card {
-      background: rgba(255,255,255,0.12);
-      border-radius: 20px;
-      padding: 22px 20px 24px;
-      border: 2px solid rgba(255,255,255,0.25);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-    }
-
-    .social-card img {
-      width: 150px;
-      height: 150px;
-      object-fit: contain;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.15);
-      padding: 10px;
-      margin-bottom: 14px;
-    }
-
-    .social-card h2 {
-      font-family: 'Barlow Semi Condensed', sans-serif;
-      font-size: 1.45em;
-      letter-spacing: 0.04em;
-      margin: 6px 0 8px;
-    }
-
-    .social-card p {
-      font-size: 0.95em;
-      line-height: 1.5em;
-      opacity: 0.9;
-      margin: 0 0 10px;
-    }
-
-    .social-handle {
-      font-size: 0.9em;
-      color: #d9c8ff;
-      word-break: break-word;
-      opacity: 0.95;
-    }
-
-    /* === FOOTER === */
-    footer {
-      flex: 0 0 auto;
-      margin-top: 18px;
-      text-align: center;
-      font-size: 0.85em;
-      opacity: 0.7;
-    }
-
-    /* === SAFETY FOR SHORT IFRAME HEIGHTS === */
-    @media (max-height: 600px) {
-      .header h1 { font-size: 1.9em; }
-      .social-card img { width: 120px; height: 120px; }
-      .social-card p { font-size: 0.9em; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/scripts.js" defer></script>
 </head>
-<body>
-
-  <div class="embed-root">
-
-    <div class="header">
+<body class="page-dnep">
+  <main class="embed-root">
+    <!-- Header -->
+    <header class="header">
       <h1>Connect with Team Arion</h1>
       <p>
         Follow our journey, competition progress,
         and professional collaborations across platforms.
       </p>
-    </div>
+    </header>
 
-    <div class="content">
+    <!-- Social links grid -->
+    <section class="content">
       <div class="social-grid">
-
-        <div class="social-card">
-          <img src="instqr.png" alt="Instagram QR">
+        <article class="social-card">
+          <img src="assets/img/instqr.png" alt="Instagram QR">
           <h2>Instagram</h2>
           <p>Competition highlights and engineering visuals.</p>
           <div class="social-handle">@arion.racing</div>
-        </div>
+        </article>
 
-        <div class="social-card">
-          <img src="liqr.png" alt="LinkedIn QR">
+        <article class="social-card">
+          <img src="assets/img/liqr.png" alt="LinkedIn QR">
           <h2>LinkedIn</h2>
           <p>Professional updates, sponsors, and milestones.</p>
           <div class="social-handle">linkedin.com/company/teamarion</div>
-        </div>
+        </article>
 
-        <div class="social-card">
-          <img src="webqr.png" alt="Website QR">
+        <article class="social-card">
+          <img src="assets/img/webqr.png" alt="Website QR">
           <h2>Website</h2>
           <p>Engineering archive and competitive legacy.</p>
           <div class="social-handle">www.teamarion.org</div>
-        </div>
+        </article>
 
-        <div class="social-card">
-          <img src="attack.png" alt="Contact QR">
+        <article class="social-card">
+          <img src="assets/img/attack.png" alt="Contact QR">
           <h2>Contact</h2>
           <p>Sponsorships, outreach, and collaborations.</p>
           <div class="social-handle">teamarion@apps.singapore.edu.hk</div>
-        </div>
-
+        </article>
       </div>
-    </div>
+    </section>
 
+    <!-- Footer -->
     <footer>
       Thank you for supporting Team Arion!
     </footer>
-
-  </div>
-
+  </main>
 </body>
 </html>

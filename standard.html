@@ -1,182 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page-standard">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>The Purple Standard | Team Arion</title>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(160deg, #2c2a78, #4b3cae 50%, #1e1c4f);
-      background-attachment: fixed;
-      background-size: cover;
-      background-repeat: no-repeat;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      overflow-y: auto;
-      min-height: 100vh;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .content {
-      max-width: 950px;
-      width: 90%;
-      padding: 40px 20px 60px;
-      animation: fadeIn 1s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero-box {
-      width: 100%;
-      max-width: 850px;
-      border-radius: 20px;
-      overflow: hidden;
-      margin: 25px auto 40px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(6px);
-      border: 2px solid rgba(255,255,255,0.25);
-    }
-
-    .hero-box img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    h1 {
-      font-family: 'Barlow Semi Condensed', sans-serif;
-      font-size: 2.5em;
-      color: #ffffff;
-      letter-spacing: 0.04em;
-      margin: 10px 0 20px;
-      text-shadow: 0 3px 10px rgba(0,0,0,0.25);
-    }
-
-    h2 {
-      font-family: 'Barlow Semi Condensed', sans-serif;
-      font-size: 1.6em;
-      margin-top: 40px;
-      color: #ffffff;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-
-    p {
-      font-size: 1.1em;
-      line-height: 1.7em;
-      color: rgba(255,255,255,0.95);
-      margin: 14px 0;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 20px auto;
-      max-width: 800px;
-    }
-
-    ul li {
-      background: rgba(255,255,255,0.12);
-      margin: 8px 0;
-      padding: 10px 16px;
-      border-radius: 10px;
-      text-align: left;
-      color: #fff;
-      font-size: 1.05em;
-    }
-
-    blockquote {
-      font-style: italic;
-      font-size: 1.3em;
-      color: #ffffff;
-      margin: 30px auto;
-      max-width: 750px;
-      background: rgba(255,255,255,0.12);
-      padding: 18px 22px;
-      border-left: 5px solid #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 25px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.25);
-    }
-
-    th, td {
-      padding: 14px 16px;
-      text-align: left;
-      font-size: 1.05em;
-    }
-
-    th {
-      background-color: rgba(255,255,255,0.25);
-      color: #fff;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    tr:nth-child(even) { background-color: rgba(255,255,255,0.08); }
-    tr:nth-child(odd) { background-color: rgba(255,255,255,0.12); }
-
-    td:first-child { font-weight: 600; color: #ffffff; }
-    td:nth-child(2) { color: #d9c8ff; font-weight: 500; }
-    td:nth-child(3) { color: rgba(255,255,255,0.9); }
-
-    .photo-box {
-      width: 100%;
-      max-width: 850px;
-      border-radius: 20px;
-      overflow: hidden;
-      margin: 50px auto 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      border: 2px solid rgba(255,255,255,0.25);
-      background: rgba(255,255,255,0.1);
-    }
-
-    .photo-box img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .caption {
-      margin-top: 8px;
-      font-size: 0.95em;
-      color: rgba(255,255,255,0.85);
-      font-style: italic;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.95em;
-      margin-top: 30px;
-      opacity: 0.85;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/scripts.js" defer></script>
 </head>
-<body>
-  <div class="content">
+<body class="page-standard">
+  <main class="content">
+    <!-- Hero banner -->
     <div class="hero-box">
-      <img src="banner.png" alt="The Purple Standard Banner">
+      <img src="assets/img/banner.png" alt="The Purple Standard Banner">
     </div>
 
-    <h1>The Purple Standard: Core Meaning</h1>
+    <!-- Intro -->
+    <header>
+      <h1>The Purple Standard: Core Meaning</h1>
+    </header>
     <p><strong>The Purple Standard</strong> represents <strong>Team Arion’s</strong> commitment to engineering perfection, design excellence, and professional discipline. It stands as our promise: that every car, every part, and every presentation embodies our pursuit of innovation, quality, and integrity.</p>
 
     <p><strong>Purple</strong>, our defining color which symbolizes dual excellence:</p>
@@ -187,57 +29,59 @@
 
     <blockquote>“We are not just another STEM Racing team, we set the standard.”</blockquote>
 
-    <h2>The Purple Campaign System</h2>
-    <p><strong>Team Arion</strong> has built an entire campaign system around the idea of <strong>“The Purple _____”</strong> which is a flexible identity framework that highlights our values and achievements across all areas of the team. Each phrase represents a pillar of who we are and what we stand for.</p>
+    <!-- Campaign system -->
+    <section>
+      <h2>The Purple Campaign System</h2>
+      <p><strong>Team Arion</strong> has built an entire campaign system around the idea of <strong>“The Purple _____”</strong> which is a flexible identity framework that highlights our values and achievements across all areas of the team. Each phrase represents a pillar of who we are and what we stand for.</p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Category</th>
-          <th>Expression</th>
-          <th>Meaning</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Engineering</td>
-          <td>The Purple Precision</td>
-          <td>Representing accuracy, tolerance mastery, and engineering excellence.</td>
-        </tr>
-        <tr>
-          <td>Innovation & R&D</td>
-          <td>The Purple Frontier</td>
-          <td>Our commitment to continuous discovery and forward-thinking experimentation.</td>
-        </tr>
-        <tr>
-          <td>Performance & Competition</td>
-          <td>The Purple Velocity</td>
-          <td>Driving excellence on track through precision, speed, and control.</td>
-        </tr>
-        <tr>
-          <td>Team Culture</td>
-          <td>The Purple Unity</td>
-          <td>Embodying collaboration, respect, and determination within every member.</td>
-        </tr>
-        <tr>
-          <td>Brand & Identity</td>
-          <td>The Purple Vision</td>
-          <td>Our design language, presentation style, and professional presence.</td>
-        </tr>
-        <tr>
-          <td>Education & Legacy</td>
-          <td>The Purple Legacy</td>
-          <td>Passing knowledge forward, inspiring future engineers and innovators.</td>
-        </tr>
-      </tbody>
-    </table>
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Expression</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Engineering</td>
+            <td>The Purple Precision</td>
+            <td>Representing accuracy, tolerance mastery, and engineering excellence.</td>
+          </tr>
+          <tr>
+            <td>Innovation &amp; R&amp;D</td>
+            <td>The Purple Frontier</td>
+            <td>Our commitment to continuous discovery and forward-thinking experimentation.</td>
+          </tr>
+          <tr>
+            <td>Performance &amp; Competition</td>
+            <td>The Purple Velocity</td>
+            <td>Driving excellence on track through precision, speed, and control.</td>
+          </tr>
+          <tr>
+            <td>Team Culture</td>
+            <td>The Purple Unity</td>
+            <td>Embodying collaboration, respect, and determination within every member.</td>
+          </tr>
+          <tr>
+            <td>Brand &amp; Identity</td>
+            <td>The Purple Vision</td>
+            <td>Our design language, presentation style, and professional presence.</td>
+          </tr>
+          <tr>
+            <td>Education &amp; Legacy</td>
+            <td>The Purple Legacy</td>
+            <td>Passing knowledge forward, inspiring future engineers and innovators.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
+    <!-- Team photo -->
     <div class="photo-box">
-      <img src="teampic.jpeg" alt="Team Arion Photo">
+      <img src="assets/img/teampic.jpeg" alt="Team Arion Photo">
     </div>
     <div class="caption">The minds behind The Purple Standard.</div>
-
-
-  </div>
+  </main>
 </body>
 </html>

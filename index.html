@@ -1,158 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Archived Project: Legacy Team Arion Website (Early Version) -->
+<html lang="en" class="page-mainindex">
 <head>
-  <meta charset="UTF-8" />
-  <title>Site Maintenance - yuemingNet</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- IBM Plex -->
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#0d0f12;
-      --panel:#13151b;
-      --text:#e6e8ec;
-      --muted:#a1a6b1;
-      --accent:#ff7a00; /* bright orange */
-    }
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    body{
-      font-family:"IBM Plex Sans", system-ui, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-    }
-
-    .wrap{
-      max-width:900px;
-      margin:0 auto;
-      padding:24px;
-      flex:1;
-      display:flex;
-      flex-direction:column;
-    }
-
-    header{
-      border-bottom:2px solid var(--accent);
-      padding-bottom:12px;
-      margin-bottom:28px;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      font-weight:600;
-      color:var(--accent);
-      font-size:.9rem;
-    }
-
-    .card{
-      background:var(--panel);
-      border:2px solid var(--accent);
-      padding:28px;
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-    }
-
-    h1{
-      font-size:2.2rem;
-      font-weight:600;
-      line-height:1.2;
-      color:var(--text);
-    }
-
-    h1 span{
-      color:var(--accent);
-    }
-
-    p{
-      max-width:720px;
-      color:var(--muted);
-      line-height:1.6;
-    }
-
-    .label{
-      font-family:"IBM Plex Mono", monospace;
-      color:var(--accent);
-      font-size:.85rem;
-    }
-
-    .bar{
-      border:2px solid var(--accent);
-      height:18px;
-      position:relative;
-    }
-
-    .fill{
-      background:var(--accent);
-      width:65%;
-      height:100%;
-    }
-
-    footer{
-      border-top:2px solid #1d2027;
-      padding:14px 24px;
-      color:var(--muted);
-      font-size:.8rem;
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-    }
-
-    a{
-      color:var(--accent);
-      text-decoration:none;
-    }
-
-    a:hover{
-      text-decoration:underline;
-    }
-
-    @media (max-width:640px){
-      h1{font-size:1.8rem;}
-      .card{padding:20px;}
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Team Arion Interactive Display for Professional Class Pit Display - Mark Yu MKYUM</title>
+  <!-- TEAM ARION AT SISHK (A STEM RACING TEAM) -->
+  <!-- CREATED BY MARK YU YUEMING / COPYRIGHT (C) 2025 TEAM ARION and MARK YU ALL RIGHTS RESERVED -->
+  <!-- TEAM ARION MEMBERS: NITHIT CHANPONGSANG; MARK YU; DANIEL LAU; MARC LEE and JAMES SHI -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&family=Inter:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/scripts.js" defer></script>
 </head>
-<body>
+<body class="page-mainindex">
+  <!-- Header prompt -->
+  <header id="mainHeader">I WANT TO LEARN MORE ABOUT...</header>
 
-  <div class="wrap">
-    <header>
-      yuemingNet Services Unavailable
-    </header>
+  <main>
+    <!-- Primary menu grid -->
+    <section class="menu-container" id="menuContainer">
+      <div class="menu" id="menu">
+        <button type="button" data-page-url="car.html" data-page-title="Confluence - Team Arion Interactive Explorer">
+          <i class="fa-solid fa-car"></i>
+          <span>The Car<br>(Interactive Viewer)</span>
+        </button>
+        <button type="button" data-page-url="design.html" data-page-title="Design & Engineering">
+          <i class="fa-solid fa-gears"></i>
+          <span>Design & Engineering</span>
+        </button>
+        <button type="button" data-page-url="standard.html" data-page-title="The Purple Standard">
+          <i class="fa-solid fa-star"></i>
+          <span>The Purple Standard</span>
+        </button>
+        <button type="button" data-page-url="sustainability.html" data-page-title="Our Contributions to Sustainability">
+          <i class="fa-solid fa-leaf"></i>
+          <span>Our Contributions to Sustainability</span>
+        </button>
+        <button type="button" data-page-url="sponsors.html" data-page-title="Sponsors & Partners">
+          <i class="fa-solid fa-handshake"></i>
+          <span>Sponsors & Partners</span>
+        </button>
+        <button type="button" data-page-url="achievements.html" data-page-title="Achievements & Awards">
+          <i class="fa-solid fa-trophy"></i>
+          <span>Achievements & Awards</span>
+        </button>
+      </div>
+    </section>
 
-    <div class="card">
-      <h1>
-        I am maintaining the <span>/TeamArion/ProPit</span>.
-      </h1>
+    <!-- Embedded content view -->
+    <section id="content">
+      <div class="top-bar">
+        <button type="button" data-action="go-back"><i class="fa-solid fa-arrow-left"></i> Go Back</button>
+        <div class="page-title" id="pageTitle">Page Title</div>
+      </div>
+      <iframe id="iframe" src="" title="Embedded Content"></iframe>
+    </section>
+  </main>
 
-      <p>
-        This service is temporarily offline while it is being updated and improved.  
-      </p>
-
-      <div class="label">I need to make a few changes to the hosting configuration, some services are temporarily suspended. (Services affected: yuemingGSn, Team Arion Internals) [Dec2025]</div>
-
-
-      <p style="font-family:'IBM Plex Mono', monospace;">
-        ACCESSING: yuemingNet-CFCDN › TA › TeamArion/ProPit
-      </p>
-    </div>
-  </div>
-
-  <footer>
-    <div>© 2019 - <span id="year"></span> Mark Yu. All Rights Reserved.</div>
-    <div></div>Hosted on yuemingNet</div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <!-- Footer instruction -->
+  <footer id="footer">Touch any item to learn more.</footer>
 </body>
 </html>
